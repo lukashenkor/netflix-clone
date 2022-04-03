@@ -10,15 +10,26 @@ import {
   Signin,
   Signup,
 } from './pages';
+import {
+  RequireAuth,
+  UserLogged,
+} from './helpers/routes';
 
 export default function App() {
+  // const user = { name: 'Roman' };
+  const user = null;
+
   return (
     <Router>
       <Routes>
-        <Route exact path={ ROUTES.HOME } element={<Home />} />
-        <Route exact path={ ROUTES.BROWSE } element={<Browse />} />
-        <Route exact path={ ROUTES.SIGN_IN } element={<Signin />} />
-        <Route exact path={ ROUTES.SIGN_UP } element={<Signup />} />
+        <Route element={ <UserLogged user={ user }/> }>
+          <Route exact path={ ROUTES.HOME } element={ <Home/> }/>
+          <Route exact path={ ROUTES.SIGN_IN } element={ <Signin/> }/>
+          <Route exact path={ ROUTES.SIGN_UP } element={ <Signup/> }/>
+        </Route>
+        <Route element={ <RequireAuth user={ user }/> }>
+          <Route exact path={ ROUTES.BROWSE } element={ <Browse/> }/>
+        </Route>
       </Routes>
     </Router>
   );
