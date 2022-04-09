@@ -7,7 +7,7 @@ import { Form } from "../components";
 import * as ROUTES from '../constants/routes';
 
 
-export default function SignUp() {
+export default function SignIn() {
   const navigate = useNavigate();
   const { firebase } = useContext(FirebaseContext);
   const [emailAddress, setEmailAddress] = useState('');

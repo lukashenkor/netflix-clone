@@ -14,10 +14,10 @@ import {
   RequireAuth,
   UserLogged,
 } from './helpers/routes';
+import { useAuthListener } from "./hooks";
 
 export default function App() {
-  // const user = { name: 'Roman' };
-  const user = null;
+  const { user } = useAuthListener();
 
   return (
     <Router>
