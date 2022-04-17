@@ -82,7 +82,7 @@ export const Feature = styled.div`
 
   @media (max-width: 1000px) {
     height: auto;
-    background-size: auto;
+    background-size: cover;
     
     ${Title} {
       font-size: 20px;
@@ -164,10 +164,11 @@ export const Item = styled.div`
     z-index: 99;
   }
   
-  @media (min-width: 1200px) {
+  @media (min-width: 1000px) {
     &:hover ${Meta}, &:hover ${Text}, &:hover ${SubTitle} {
       display: block;
       z-index: 100;
+      font-size: 8px;
     }
   }
   
