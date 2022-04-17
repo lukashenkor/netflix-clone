@@ -1,4 +1,4 @@
-export default function selectionFilter({ series, films }) {
+export function selectionFilter({ series, films }) {
   return {
     series: [
       {
@@ -32,10 +32,6 @@ export default function selectionFilter({ series, films }) {
         data: films.filter((item) => item.genre === 'thriller'),
       },
       {
-        title: 'Drama',
-        data: films.filter((item) => item.genre === 'drama'),
-      },
-      {
         title: 'Children',
         data: films.filter((item) => item.genre === 'children'),
       },
@@ -49,4 +45,4 @@ export default function selectionFilter({ series, films }) {
       },
     ]
   };
-};
+}
